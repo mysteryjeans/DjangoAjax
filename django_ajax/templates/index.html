@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Django Unobtrusive Ajax</title>
+		<script type="text/javascript" src="/static/lib/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="/static/lib/jquery.unobtrusive-ajax.js"></script>
+	</head>
+	<body>
+		<h1>Django Unobtrusive Ajax</h1>
+		<h2>Example for Unobtrusive ajax</h2>
+		<form action="/gettime/" method="get">
+			<input type="submit" value="Get time"/>
+		</form>
+		<form action="/gettime/" method="get" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#divTime">
+			<input type="submit" value="Get time through ajax"/>
+		</form>		
+		<h3>Server Time</h3>
+		<div id="divTime"></div>
+		
+	</body>
+</html>
