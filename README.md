@@ -28,4 +28,15 @@ Four events are available to subscribe through attributes of Ajax call:
 ##Loading Animation
 You can set element id the data-ajax-loading="#loading" to display during Ajax call and data-ajax-loading-duration="2000" is the duration for the animation.
 
+##Graceful Degradation
+You application should be able to handle non Ajax call if javascript is not enabled, so instead of settings ajax url in form’s action, you can set it in data-ajax-url. Alternatively you can also check fr ajax call with in view method and act accordingly.
+
+if request.is_ajax():  
+return HttpResponse(str(datetime.now()))
+
+
+return render_to_response('gettime.html', {'time': str(datetime.now()) })
+
+
+
 
