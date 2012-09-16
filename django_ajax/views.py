@@ -10,7 +10,7 @@ def home(request):
 
 def gettime(request):
     if request.is_ajax():
-        return HttpResponse('<div>' + str(datetime.now()) +'</div>')
+        return HttpResponse(str(datetime.now()))
     
     # Graceful degradation
-    return render_to_response('gettime.html', {'time': str(datetime.now()) })
+    return render_to_response('index.html', {'time': str(datetime.now()) })
