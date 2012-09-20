@@ -1,7 +1,7 @@
 DjangoAjax
 ==========
 
-DjangoAjax is the example of unobtrusive ajax call in django, all you need is few additional attributes on form to make ajax enabled Django applications and almost absolutely no change in django application
+DjangoAjax is the example of unobtrusive ajax call in django, all you need is few additional attributes on the form to make Ajax enabled applications with almost no change in django application
 
 ##How To
 List of ajax attributes: [http://codestand.feedbook.org/2012/09/django-unobtrusive-ajax.html](http://codestand.feedbook.org/2012/09/django-unobtrusive-ajax.html "Django Unobtrusive Ajax")  
@@ -29,10 +29,10 @@ Four events are available to subscribe through attributes of Ajax call:
 You can set element id the data-ajax-loading="#loading" to display during Ajax call and data-ajax-loading-duration="2000" is the duration for the animation.
 
 ##Graceful Degradation
-You application should be able to handle non Ajax call if javascript is not enabled, so instead of settings ajax url in form’s action, you can set it in data-ajax-url. Alternatively you can also check fr ajax call with in view method and act accordingly.
+Application should be able to handle non Ajax call if javascript is not enabled, so instead of settings ajax url in form’s action, you can set it in data-ajax-url. Alternatively you can also check for ajax call with in view method and act accordingly, for example:
 
 if request.is_ajax():  
-return HttpResponse(str(datetime.now()))
+    return HttpResponse(str(datetime.now()))
 
 
 return render_to_response('gettime.html', {'time': str(datetime.now()) })
